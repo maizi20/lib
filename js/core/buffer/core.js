@@ -159,9 +159,6 @@ define('core/buffer/core',[],()=>{
         case 0:return a+b*16777216
       }throw new TypeError(`The value of "byteLength" is out of range. It must be >= 1 and <= 6. Received ${size|0}.`);
     }
-    get#utf8(){
-      return this.utf8Slice(0,1024)
-    }
   }
   var pool,pool_useage=0
   ,buff=Buffer.prototype
