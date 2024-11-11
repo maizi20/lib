@@ -37,7 +37,7 @@ interface buffer{
     MAX_LENGTH: 4294967296, MAX_STRING_LENGTH: 536870888
     //,Blob,resolveObjectURL,File
 }
-interface Buffer_{
+interface Buffer{
     asciiSlice:decode,base64Slice:decode,base64urlSlice:decode,latin1Slice:decode,hexSlice:decode,ucs2Slice:decode,utf8Slice:decode
     asciiWrite:encode,base64Write:encode,base64urlWrite:encode,latin1Write:encode,hexWrite:encode,ucs2Write:encode,utf8Write:encode
     readUInt8:reader,readUint8:reader,readInt8:reader,readUInt16LE:reader,readUint16LE:reader,readInt16LE:reader,readUInt16BE:reader,readUint16BE:reader,readInt16BE:reader,readUInt32LE:reader,readUint32LE:reader,readInt32LE:reader,readFloatLE:reader,readFloatBE:reader,readDouleLE:reader
