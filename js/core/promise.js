@@ -1,4 +1,4 @@
-define('promise',[],()=>{
+define('core/promise',[],()=>{
   var w=(r,j)=>e=>e&&'function'===typeof e.then?e.then(w(r,j),j):r(e);
   Object.defineProperty(Promise,'resolveTo',{
     value(){
