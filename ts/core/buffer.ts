@@ -40,12 +40,10 @@ interface buffer{
 interface Buffer_{
     asciiSlice:decode,base64Slice:decode,base64urlSlice:decode,latin1Slice:decode,hexSlice:decode,ucs2Slice:decode,utf8Slice:decode
     asciiWrite:encode,base64Write:encode,base64urlWrite:encode,latin1Write:encode,hexWrite:encode,ucs2Write:encode,utf8Write:encode
-    readUInt8:reader,readUint8:reader,readInt8:reader,readUInt16LE:reader,readUint16LE:reader,readInt16LE:reader,readUInt16BE:reader,
-    readUint16BE:reader,readInt16BE:reader,readUInt32LE:reader,readUint32LE:reader,readInt32LE:reader,readFloatLE:reader,readFloatBE:reader,readDouleLE:reader
-    writeUInt8:writer,writeUint8:writer,writeInt8:writer,writeUInt16LE:writer,writeUint16LE:writer,writeInt16LE:writer,writeUInt16BE:writer,
-    writeUint16BE:writerwriteInt16BE:writer,writeFloatLE:writer,writeFloatBE:writer,writeDouleLE:writer,writeDouleBE:writer
-    readUintLE:reader_size,readUIntLE:reader_size,readIntLE:reader_size,readUintBE:reader_size,readUIntBE:reader_size,readIntBE:reader_size
-    writeIntLE:writer_size,writeUIntLE:writer_size,writeUintLE:writer_size,writeIntBE:writer_size,writeUIntBE:writer_size,writeUintBE:writer_size
+    readUInt8:reader,readUint8:reader,readInt8:reader,readUInt16LE:reader,readUint16LE:reader,readInt16LE:reader,readUInt16BE:reader,readUint16BE:reader,readInt16BE:reader,readUInt32LE:reader,readUint32LE:reader,readInt32LE:reader,readFloatLE:reader,readFloatBE:reader,readDouleLE:reader
+    writeUInt8:writer,writeUint8:writer,writeInt8:writer,writeUInt16LE:writer,writeUint16LE:writer,writeInt16LE:writer,writeUInt16BE:writer,writeUint16BE:writer,writeInt16BE:writer,writeFloatLE:writer,writeFloatBE:writer,writeDouleLE:writer,writeDouleBE:writer
+    readUintLE:reader_size,readUIntLE:reader_size,readIntLE:reader_size,readUintBE:reader_size,readUIntBE:reader_size,readIntBE:reader_size,
+    writeIntLE:writer_size,writeUIntLE:writer_size,writeUintLE:writer_size,writeIntBE:writer_size,writeUIntBE:writer_size,writeUintBE:writer_size,
 }
 class Buffer{
     static from:buffer_from
@@ -74,7 +72,7 @@ class Buffer{
     includes:((val:BufferLike,start?:Int)=>Boolean)|((str:String,start?:Int,enc?:coding)=>Boolean)|((byte:Int,start?:Int)=>Boolean)
 }
 
-var buf1=(await globalThis.buffer)as buffer;
+var buf1=(await globalThis['core/buffer'])as buffer;
 export var{SlowBuffer,transcode,isUtf8,isAscii,kMaxLength,kStringMaxLength,btoa,atob,constants,INSPECT_MAX_BYTES}=buf1;
 // export var{Blob,resolveObjectURL,File}=buf1;
 export{Buffer};
